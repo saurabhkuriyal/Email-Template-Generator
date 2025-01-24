@@ -27,7 +27,7 @@ export default function Home() {
         newformData.append("image", file);
 
         try {
-            const response = await axios.post("https://email-template-generator-1.onrender.com/uploadImage", newformData, {
+            const response = await axios.post("http://localhost:3000/uploadImage", newformData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -55,7 +55,7 @@ export default function Home() {
 
             const payload={ formData,image}
 
-            const response = await axios.post("https://email-template-generator-1.onrender.com/renderanddownloadlayout", payload, { responseType: "blob" });
+            const response = await axios.post("http://localhost:3000/renderanddownloadlayout", payload, { responseType: "blob" });
 
             //console.log(response);
 
